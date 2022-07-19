@@ -1,6 +1,5 @@
 <?php
 
-
 if (isset($_POST['submit'])) {
 
     $otpCode = $_POST['otpCode'];

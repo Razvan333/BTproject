@@ -8,7 +8,6 @@ class SignUpController extends Signup
     private $password;
     private $pswRepeat;
 
-
     public function __construct($userFullName, $email, $userName, $password, $pswRepeat)
     {
         $this->userFullName = $userFullName;
@@ -48,8 +47,7 @@ class SignUpController extends Signup
         $this->setUser($this->userFullName, $this->email, $this->userName, $this->password);
     }
 
-
-    private function emptyInput()
+    public function emptyInput()
     {
         if (empty($this->userFullName) || empty($this->email) || empty($this->userName) || empty($this->password) || empty($this->pswRepeat)) {
             return false;
@@ -58,7 +56,7 @@ class SignUpController extends Signup
         return true;
     }
 
-    private function invalidUserFullName()
+    public function invalidUserFullName()
     {
         return htmlspecialchars($this->userFullName);
     }
@@ -72,7 +70,7 @@ class SignUpController extends Signup
         return false;
     }
 
-    private function invalidUserName()
+    public function invalidUserName()
     {
         if (preg_match("/^[a-zA-z0-9]*$/", $this->userName)) {
             return true;

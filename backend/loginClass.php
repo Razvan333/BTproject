@@ -4,16 +4,12 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require '../vendor/autoload.php';
-// require_once '../vendor/PHPMailer/src/Exception.php';
-// require_once '../vendor/PHPMailer/src/PHPMailer.php';
-// require_once '../vendor/PHPMailer/src/SMTP.php';
 
 class Login extends DbConn
 {
 
     protected function getUser($userName, $userPassword)
     {
-
 
         $stmt = $this->connect()->prepare("SELECT password FROM users WHERE userName = ?;");
 
@@ -88,7 +84,7 @@ class Login extends DbConn
 
         if ($mail->send()) {
             $_SESSION['timeMailSent'] = $_SERVER["REQUEST_TIME"];
-            header("location: ../templates/otp.php?success=Message was send successfully");
+            header("location: ../templates/otp.php?success=Message was send successfully" . $_SESSION['otpCode']);
         } else {
             header("location: ../templates/logIn.php?error=Message was not sent, please try again");
         }

@@ -31,8 +31,8 @@ class Signup extends DbConn
 
         if ($stmt->rowCount() > 0) {
             return false;
-        } else {
-            return true;
         }
+
+        return true;
     }
 }

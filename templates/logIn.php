@@ -6,7 +6,6 @@
 <link rel="stylesheet" href="style.css">
 
 <body>
-
     <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
         <form class="p-4 rounded bg-column shadow" action="../backend/loginProcess.php" method="post" style="width: 30rem;">
             <h1 class="text-center pb-5 display-4"><br />LOGIN</h1>
@@ -35,12 +34,8 @@
             </div>
             <button type="submit" name="submit" class="btn btn-primary">Login</button>
             <a href="register.php" class="btn btn-dark" style="float:right;">Create an account</a><br /><br />
-
         </form>
-
     </div>
-    </div>
-
 </body>
 
 </html>

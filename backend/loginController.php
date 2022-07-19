@@ -26,7 +26,6 @@ class LoginController extends Login
         $this->getUser($this->userName, $this->userPassword);
     }
 
-
     private function emptyInput()
     {
 

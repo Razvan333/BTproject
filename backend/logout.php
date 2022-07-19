@@ -8,6 +8,3 @@ session_destroy();
 
 
 header("location: ../templates/login.php");
-
-
-

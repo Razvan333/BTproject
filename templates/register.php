@@ -1,8 +1,4 @@
-<?php
-
-require_once "../header.php";
-
-?>
+<?php require_once "../header.php"; ?>
 <!DOCTYPE html>
 <title>Registration</title>
 
@@ -16,7 +12,6 @@ require_once "../header.php";
                         <?= $_GET['error'] ?>
                     </div>
                 <?php } ?>
-
                 <div class="mb-3">
                     <label for="InputFullName" class="form-label">Your Name:
                     </label>
@@ -50,7 +45,6 @@ require_once "../header.php";
             </form>
         </div>
     </div>
-
 </body>
 
 </html>

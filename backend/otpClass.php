@@ -15,14 +15,12 @@ class OtpCode
         session_start();
 
         define('TIME_OTP_IS_VALID', 120);
-        // var_dump(TIME_OTP_IS_VALID);
-        // die;
+
         if ($this->checkOtpToBeNumber()) {
 
             $currentTime = $_SERVER['REQUEST_TIME'];
             $verifyOtpValidity = $currentTime - $_SESSION['timeMailSent'];
-            // var_dump($verifyOtpValidity);
-            // die;
+
             if ($this->otpCode != $_SESSION['otpCode']) {
                 header("location: ../templates/otp.php?error=OTP code incorrect");
                 exit();
@@ -43,7 +41,7 @@ class OtpCode
         }
     }
 
-    private function checkOtpToBeNumber()
+    public function checkOtpToBeNumber()
     {
         if (preg_match("/^[0-9]{6}$/", $this->otpCode)) {
             return true;
