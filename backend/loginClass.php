@@ -84,7 +84,7 @@ class Login extends DbConn
 
         if ($mail->send()) {
             $_SESSION['timeMailSent'] = $_SERVER["REQUEST_TIME"];
-            header("location: ../templates/otp.php?success=Message was send successfully" . $_SESSION['otpCode']);
+            header("location: ../templates/otp.php?success=Message was send successfully");
         } else {
             header("location: ../templates/logIn.php?error=Message was not sent, please try again");
         }
